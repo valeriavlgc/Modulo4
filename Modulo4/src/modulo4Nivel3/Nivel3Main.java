@@ -16,13 +16,13 @@ int[] precios = new int[10];
 ArrayList<String> comanda = new ArrayList<String>();
 int cuenta = 0;
 boolean fallo = false;
-String error = "";
+
 
 mostrarMenu(platos,precios);
 comanda = menuPedir(platos);
 try {
 cuenta = buscarCoincidencia(comanda, platos, precios); 
-} catch (revisionPlatos err) {
+} catch (RevisionPlatos err) {
 	System.out.println("El plato no existe. Error 03: ");
 	err.printStackTrace();
 	System.out.println("");
@@ -84,8 +84,8 @@ ArrayList<String> comanda = new ArrayList<String>();
 			 
 			try {
 			System.out.println("¿Quiere continuar pidiendo? 1 -> Si/ 0 -> No");
-		    respuesta = revisionTipos.getIntException();
-			} catch (revisionTipos err) {
+		    respuesta = RevisionTipos.getIntException();
+			} catch (RevisionTipos err) {
 		    	System.out.print("La respuesta introducida es errónea. Error 02 :");
 		    	err.printStackTrace();
 		    	System.out.println();
@@ -119,7 +119,7 @@ System.out.println("Usted ha pedido: ");
 		
 	    if(contador != 1) {
 			
-	    	throw new revisionPlatos();
+	    	throw new RevisionPlatos();
 			
 			}
 	
